@@ -1,0 +1,28 @@
+# django
+*.log
+*.pot
+*.pyc
+**/__pycache__
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+mysql_dat
+.DS_Store
+
+# code editors
+.vscode/
+.idea/
+
+# env
+.env
+.venv/*
+!.venv/.keep
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+tmp/
+mysql_data/
