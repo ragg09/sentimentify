@@ -14,7 +14,7 @@ DESCRIPTION: Sentimentify is a sentiment analysis tool that allows users to anal
 ### BE
 - Python 3.11.2
 - Django 4.2.3
-- Django REST framework
+- Django REST framework 3.14.0
 - AI Packages (to be specified)
 
 ## Getting Started
