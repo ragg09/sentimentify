@@ -9,8 +9,7 @@ export interface ButtonProps {
 const Button: React.FunctionComponent<ButtonProps> = ({
   text,
   onClick,
-  type,
-
+  type
 }: ButtonProps) => {
   return (
     <div className="flex flex-row">
@@ -27,7 +26,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
 
 Button.defaultProps = {
   onClick: () => {},
-  type: 'button',
+  type: 'button'
 };
 
 export default Button;

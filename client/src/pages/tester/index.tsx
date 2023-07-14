@@ -1,5 +1,5 @@
 import Container from '@/components/Container';
-import Button from '@/components/Container/Button';
+import Button from '@/components/Button';
 import Headings from '@/components/Headings';
 import {
   decrement,
