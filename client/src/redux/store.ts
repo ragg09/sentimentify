@@ -1,9 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import counterReducer from '@/redux/features/counter/counterSlice';
+import { authAPI } from '@/redux/services/authAPI';
 
 export const store = configureStore({
-  reducer: { counter: counterReducer }
+  reducer: { 
+    counter: counterReducer,
+    [authAPI.reducerPath]: authAPI.reducer, 
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    })
+      .concat(authAPI.middleware),
+  devTools: process.env.NODE_ENV !== 'production',
 });
 
 setupListeners(store.dispatch);
