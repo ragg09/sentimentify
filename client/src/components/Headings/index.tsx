@@ -6,11 +6,7 @@ export interface HeadingProps {
   className?: string;
 }
 
-const Headings: React.FC<HeadingProps> = ({
-  option,
-  text,
-  className
-}: HeadingProps): ReactNode => {
+const Headings: React.FC<HeadingProps> = ({ option, text, className }: HeadingProps): ReactNode => {
   const HeadingTag = option;
   const classNameMapping = {
     h1: 'text-5xl font-extrabold',
@@ -18,14 +14,12 @@ const Headings: React.FC<HeadingProps> = ({
     h3: 'text-3xl font-bold',
     h4: 'text-2xl font-bold',
     h5: 'text-xl font-bold',
-    h6: 'text-lg font-bold'
+    h6: 'text-lg font-bold',
   };
 
   return (
     <div className="mb-4">
-      <HeadingTag className={className ? className : classNameMapping[option]}>
-        {text}
-      </HeadingTag>
+      <HeadingTag className={className ? className : classNameMapping[option]}>{text}</HeadingTag>
     </div>
   );
 };
