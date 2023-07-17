@@ -1,5 +1,5 @@
-import Container from '@/components/Container';
-import Headings from '@/components/Headings';
+import Container from '@/src/components/Container';
+import Headings from '@/src/components/Headings';
 import { ReactNode } from 'react';
 
 const SignIn = (): ReactNode => {

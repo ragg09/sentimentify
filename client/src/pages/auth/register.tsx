@@ -1,9 +1,8 @@
-import Button from '@/components/Button';
-import Container from '@/components/Container';
-import InputField from '@/components/FormElements/InputField';
-import { useAppDispatch } from '@/redux/hooks';
-import { useRegisterUserMutation } from '@/redux/services/authAPI';
-import { alertError, alertSuccess, isBadRequest, isRequestOk } from '@/utils';
+import Button from '@/src/components/Button';
+import Container from '@/src/components/Container';
+import InputField from '@/src/components/FormElements/InputField';
+import { useRegisterUserMutation } from '@/src/redux/services/authAPI';
+import { alertError, alertSuccess } from '@/src/utils';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -25,7 +24,7 @@ const Register = (): ReactNode => {
     register,
     handleSubmit,
     watch,
-    formState: { errors }
+    formState: { errors },
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
@@ -118,14 +117,12 @@ const Register = (): ReactNode => {
                 type="password"
                 {...register('confirm_password', {
                   required: true,
-                  validate: (value) => value === watch('password')
+                  validate: (value) => value === watch('password'),
                 })}
                 error={
-                  errors.confirm_password &&
-                  errors.confirm_password.type === 'required'
+                  errors.confirm_password && errors.confirm_password.type === 'required'
                     ? 'This field is required'
-                    : errors.confirm_password &&
-                      errors.confirm_password.type === 'validate'
+                    : errors.confirm_password && errors.confirm_password.type === 'validate'
                     ? 'Password does not match'
                     : undefined
                 }
