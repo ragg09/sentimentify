@@ -1,3 +1,4 @@
+import { getUserToken } from '@/src/utils';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const authAPI = createApi({
@@ -25,10 +26,24 @@ export const authAPI = createApi({
       invalidatesTags: ['auth'],
     }),
 
+    logoutUser: builder.mutation({
+      query: () => {
+        return {
+          url: 'logout/',
+          method: 'POST',
+          headers: {
+            Authorization: `Token ${getUserToken()}`,
+          },
+        };
+      },
+      invalidatesTags: ['auth'],
+    }),
+
   }),
 });
 
 export const {
   useRegisterUserMutation,
   useLoginUserMutation,
+  useLogoutUserMutation,
 } = authAPI;

@@ -28,7 +28,7 @@ const SignIn = (): ReactNode => {
         throw new Error(errorMessage);
       } else {
         localStorage.setItem('token', res.data.token);
-        await push('/sentimentify');
+        await push('/dashboard');
         alertSuccess('User Registered Successfully');
       }
     } catch (error: any) {
