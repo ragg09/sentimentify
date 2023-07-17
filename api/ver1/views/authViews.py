@@ -10,3 +10,10 @@ class RegisterView(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+    
+class LogoutView(APIView):
+    def post(self, request):
+        request.user.auth_token.delete()
+        return Response({
+            'message': "User logged out"
+        })
