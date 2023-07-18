@@ -1,10 +1,11 @@
 
 from django.contrib import admin
-from ver1.models import User
+from ver1.models import SentimentAnalysist, User
 
 # Register your models here.
 admin.site.register(
     [
-        User
+        User,
+        SentimentAnalysist
     ]
 )
