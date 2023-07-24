@@ -39,6 +39,10 @@ cd client
 run the command
 
 ```bash
+npm install
+```
+
+```bash
 npm run dev
 ```
 
@@ -55,6 +59,14 @@ cd api
 ```
 
 run the command
+
+```bash
+python manage.py migrate
+```
+
+```bash
+python manage.py createsuperuser
+```
 
 ```bash
 python manage.py runserver

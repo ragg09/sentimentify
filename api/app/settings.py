@@ -29,7 +29,7 @@ env.read_env(env_file=os.path.join(BASE_DIR, ".env"))
 
 # Set the HF_HOME environment variable to your desired path
 # Replace "YOUR_DESIRED_PATH" with the path to your desired directory
-os.environ["HF_HOME"] = "F:\SUN_ASTERISK\huggingface"
+# os.environ["HF_HOME"] = "F:\SUN_ASTERISK\huggingface"
 
 
 # Quick-start development settings - unsuitable for production
